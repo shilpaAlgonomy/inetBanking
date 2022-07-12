@@ -17,31 +17,26 @@ public class LoginPage {
 		
 	}
 
-	@FindBy(name="emailid")
-	WebElement email;
 	
-	@FindBy(name="emailid")
+
+	@FindBy(name="uid")
 	WebElement userName;
 	
-	@FindBy(name="emailid")
+	@FindBy(name="password")
 	WebElement pwd;
 	 
 	@FindBy(name="btnLogin")
 	WebElement LoginBtn;
 	
-	public void setEmail(String mail)
+	
+	public void setUserName(String uname)
 	{
-		email.sendKeys(mail);
+		userName.sendKeys(uname);
 	}
 	
-	public void setUserName(String mail)
+	public void setPassWord(String password)
 	{
-		email.sendKeys(mail);
-	}
-	
-	public void setPassWord(String mail)
-	{
-		email.sendKeys(mail);
+		pwd.sendKeys(password);
 	}
 	
 	

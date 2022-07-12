@@ -3,19 +3,21 @@ package com.inetBanking.testCases;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
 import com.inetBanking.pageObjects.LoginPage;
 
 public class TC_LoginTest_001 extends BaseClass{
 	
-	@Test
-	public void loginTest() throws IOException
+	@Test(priority=1)
+	public void loginTest(ITestContext context) throws IOException
 	{
 		driver.get(baseUrl);
 		logger.info("Opened the application");
 		
 		LoginPage lp=new LoginPage(driver);
+		
 		lp.setUserName(userName);
 		logger.info("Enter UserName");
 		lp.setPassWord(pwd);

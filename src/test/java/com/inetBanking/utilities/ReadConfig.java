@@ -11,7 +11,7 @@ public class ReadConfig {
 	
 	public ReadConfig()
 	{
-		File src=new File("./Driver//chromedriver.exe");
+		File src=new File("./Configuration/config.properties");
 		
 		try {
 			FileInputStream fis=new FileInputStream(src);
@@ -19,7 +19,7 @@ public class ReadConfig {
 			pro.load(fis);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.getMessage();
+			System.out.println("Exception is "+e.getMessage());
 		}
 	}
 	

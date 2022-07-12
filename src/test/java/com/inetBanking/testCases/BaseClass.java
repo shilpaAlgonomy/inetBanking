@@ -20,24 +20,30 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-	ReadConfig readconfig=new ReadConfig();
+	/*ReadConfig readconfig=new ReadConfig();
 	public String baseUrl=readconfig.getApplicationUrl();
 	public String userName=readconfig.getUserName();
-	public String pwd=readconfig.getPassword();
+	public String pwd=readconfig.getPassword();*/
 
+	public String baseUrl="https://demo.guru99.com/v4/index.php";
+	public String userName="mngr418496";
+	public String pwd="rarabaj";
 	
 	public static WebDriver driver;
 	public static Logger logger;
-	@Parameters("browser")
+	
+	//@Parameters("browser")
 	@BeforeClass
 	public void setup(String br)
 	{
-		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 		
-		 logger=Logger.getLogger("ebanking");
-			PropertyConfigurator.configure("log4j.properties");
+		driver=new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 		
-	if(br.equals("chrome"))
+		 logger=Logger.getLogger("CMPMaven");
+		PropertyConfigurator.configure("log4j.xml");
+		
+	/*if(br.equals("chrome"))
 	{
 		//System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
 		WebDriverManager.chromedriver().setup();
@@ -47,7 +53,7 @@ public class BaseClass {
 	else if(br.equals("firefox"))
 	{
 		System.out.println("browser mismatch");
-	}
+	}*/
 			
 	}
 	
